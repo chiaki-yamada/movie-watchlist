@@ -74,18 +74,12 @@ input:focus {
 
 /* Header Styles */
 header {
-  background-color: var(--primary);
-}
-
-header .inner-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
+  background-color: #16467D;
+  padding: 15px 0;
 }
 
 header a {
-  color: var(--white);
+  color: white;
   font-size: 1.25rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -95,26 +89,19 @@ header a:hover {
   opacity: 0.7;
 }
 
-header .brand a {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 header .nav-links {
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
 header .nav-links li {
+  font-size: 0.75rem;
   display: inline-block;
-  margin-right: 30px;
-}
-
-header .nav-links li:last-child {
-  margin-right: 0;
+  margin-left: 18px;
 }
 
 /* Add Page */
@@ -126,12 +113,15 @@ header .nav-links li:last-child {
 
 .add-content .input-wrapper input {
   width: 100%;
-  background-color: var(--primary);
+  background-color: #16467D;
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: var(--white);
+  color: white;
   font-size: 1.25rem;
+}
+::placeholder {
+  color: #D4D4D4;
 }
 
 .results {
@@ -179,14 +169,18 @@ header .nav-links li:last-child {
   color: var(--primary);
   margin: 0;
 }
-
+.result-card .controls {
+  display: flex;
+}
 .result-card .controls button {
-  margin-right: 10px;
+  font-size: 0.75rem;
+  padding: 5px;
+  margin-left: 10px;
 }
 
 /* Movie Page */
 .movie-page {
-  padding: 30px 0;
+  padding: 30px 20px;
 }
 
 .movie-page .header {
@@ -198,7 +192,7 @@ header .nav-links li:last-child {
 
 .count-pill {
   display: block;
-  background-color: var(--secondary);
+  background-color: #42D176;
   padding: 5px 15px;
   font-size: 1.125rem;
   font-weight: 600;
@@ -207,19 +201,37 @@ header .nav-links li:last-child {
 }
 
 .movie-page .heading {
-  color: var(--primary);
+  color: #16467D;
+  font-size: 1.25rem;
   margin: 0;
 }
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .result-card .controls button {
+    font-size: 1rem;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .movie-page .heading {
+    font-size: 2rem;
+  }
+}
+
+
+@media (min-width: 1024px) {
   .movie-grid {
     grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+  
   }
 }
 
@@ -253,7 +265,6 @@ header .nav-links li:last-child {
 
 .movie-card .inner-card-controls {
   display: inline;
-  background-color: red;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -285,8 +296,8 @@ header .nav-links li:last-child {
 }
 
 .btn-icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .movie-page .no-movies {
